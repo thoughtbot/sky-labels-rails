@@ -14,4 +14,15 @@ And then execute:
 
     $ bundle
 
-Add the following directive to your Javascript manifest file (application.js):
+Add the following directive to your JavaScript manifest file (application.js):
+
+    //= require sky-labels
+
+And the following to you CSS manifest file (application.css.scss):
+
+    *= require sky-labels
+
+You'll then need to initialize SkyLabels. This is done by calling
+`setupSkyLabels()`. One way to do this is to add a file called
+`sky-labels-setup.js.coffee` to your `app/assets/javascripts`
+directory that simply calls `setupSkyLabels()`.
