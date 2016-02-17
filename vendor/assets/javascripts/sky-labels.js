@@ -10,7 +10,7 @@ var setupSkyLabels = function () {
   $(document).on("focus blur", ".sky-label", addOrRemoveHasTextClass);
   $(document).on("focus", ".sky-label", addFocusedClass);
   $(document).on("blur", ".sky-label", removeFocusedClass);
-  $(document).ready(hideLabelsIfInputHasText);
+  $(document).on("ready, page:change", ".sky-label", hideLabelsIfInputHasText);
 
   function addFocusedClass(event) {
     var fieldWrapper = $(event.currentTarget);
