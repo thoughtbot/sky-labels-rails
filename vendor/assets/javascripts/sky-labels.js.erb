@@ -7,9 +7,9 @@
  *  Under MIT License
  */
 var setupSkyLabels = function () {
-  $(document).on("focus blur", ".sky-label", addOrRemoveHasTextClass);
-  $(document).on("focus", ".sky-label", addFocusedClass);
-  $(document).on("blur", ".sky-label", removeFocusedClass);
+  $(document).on("focus blur", "<%= SkyLabels.selector %>", addOrRemoveHasTextClass);
+  $(document).on("focus", "<%= SkyLabels.selector %>", addFocusedClass);
+  $(document).on("blur", "<%= SkyLabels.selector %>", removeFocusedClass);
   $(document).ready(hideLabelsIfInputHasText);
 
   function addFocusedClass(event) {
@@ -23,7 +23,7 @@ var setupSkyLabels = function () {
   }
 
   function hideLabelsIfInputHasText() {
-    $(".sky-label").trigger("blur");
+    $("<%= SkyLabels.selector %>").trigger("blur");
   }
 
   function addOrRemoveHasTextClass(event) {
